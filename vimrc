@@ -25,7 +25,6 @@ Plug 'prettier/vim-prettier', {
 call plug#end()
 filetype plugin on
 filetype plugin indent on
-
 let g:racer_experimental_completer = 1
 
 " run rustfmt on save
@@ -78,5 +77,8 @@ set expandtab
 set autoindent
 " indent based on syntax
 set smartindent
+
+" So .rs files are detected as rust and not hercules
+au BufRead,BufNewFile *.rs set filetype=rust
 
 
