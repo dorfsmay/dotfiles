@@ -1,0 +1,7 @@
+[user]
+	email = yves@zioup.com
+	name = Yves Dorfsman
+[color]
+	ui = auto
+[credential]
+	helper = cache --timeout=3600
