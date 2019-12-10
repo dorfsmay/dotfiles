@@ -20,9 +20,15 @@ Plug 'tpope/vim-fugitive'
 Plug 'scrooloose/nerdtree'
 Plug 'jamessan/vim-gnupg'
 Plug 'vim-syntastic/syntastic'
+"Plug 'rust-lang/rust.vim'
+"Plug 'racer-rust/vim-racer'
+" Rust
 Plug 'rust-lang/rust.vim'
-"Plugin 'idris-hackers/idris-vim'
-Plug 'racer-rust/vim-racer'
+Plug 'prabirshrestha/async.vim'
+Plug 'prabirshrestha/vim-lsp'
+Plug 'prabirshrestha/asyncomplete.vim'
+Plug 'prabirshrestha/asyncomplete-lsp.vim'
+" /Rust
 " Black (Python PEP8)
 " Plug 'ambv/black'
 " Prettier (javascript)
@@ -79,7 +85,8 @@ set nobackup
 set smarttab
 set shiftwidth=4
 set tabstop=4
-set expandtab
+" We still want to be able to use tab character.
+"set expandtab
 
 " indent same as previous line
 set autoindent
@@ -89,4 +96,12 @@ set smartindent
 " So .rs files are detected as rust and not hercules
 au BufRead,BufNewFile *.rs set filetype=rust
 
+" For Rust RLS
+if executable('rls')
+    au User lsp_setup call lsp#register_server({
+        \ 'name': 'rls',
+        \ 'cmd': {server_info->['rustup', 'run', 'nightly', 'rls']},
+        \ 'whitelist': ['rust'],
+        \ })
+endif
 
