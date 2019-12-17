@@ -1,6 +1,12 @@
 """"""""""""""""""""""""""""""""""""""
 " to install all plugins:
 "     vim +PlugInstall +qall
+"
+" to clean old plugin, remove from .vimrc +
+"     vim +PlugClean
+"
+" Both commands can be run from : prompt inside vim.
+"
 set nocompatible
 filetype off
 
@@ -16,9 +22,13 @@ call plug#begin('~/.vim/plugged')
 
 """"""""""""""""""""""""""""""""""""""
 " plugins
+"Plug 'benjifisher/matchit.zip'
+Plug 'andymass/vim-matchup'
 Plug 'tpope/vim-fugitive'
 Plug 'scrooloose/nerdtree'
 Plug 'jamessan/vim-gnupg'
+Plug 'ianks/vim-tsx'
+Plug 'leafgarland/typescript-vim'
 Plug 'vim-syntastic/syntastic'
 "Plug 'rust-lang/rust.vim'
 "Plug 'racer-rust/vim-racer'
