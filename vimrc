@@ -22,7 +22,6 @@ call plug#begin('~/.vim/plugged')
 
 """"""""""""""""""""""""""""""""""""""
 " plugins
-"Plug 'benjifisher/matchit.zip'
 Plug 'andymass/vim-matchup'
 Plug 'tpope/vim-fugitive'
 Plug 'scrooloose/nerdtree'
@@ -95,8 +94,8 @@ set nobackup
 set smarttab
 set shiftwidth=4
 set tabstop=4
-" We still want to be able to use tab character.
-"set expandtab
+set list
+set listchars=tab:⇥·,trail:␣
 
 " indent same as previous line
 set autoindent
