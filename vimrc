@@ -28,6 +28,7 @@ Plug 'scrooloose/nerdtree'
 Plug 'jamessan/vim-gnupg'
 Plug 'ianks/vim-tsx'
 Plug 'leafgarland/typescript-vim'
+Plug 'maxmellon/vim-jsx-pretty'
 Plug 'vim-syntastic/syntastic'
 "Plug 'rust-lang/rust.vim'
 "Plug 'racer-rust/vim-racer'
@@ -41,9 +42,9 @@ Plug 'prabirshrestha/asyncomplete-lsp.vim'
 " Black (Python PEP8)
 " Plug 'ambv/black'
 " Prettier (javascript)
-Plug 'prettier/vim-prettier', {
-  \ 'do': 'npm install',
-  \ 'for': ['javascript', 'typescript', 'css', 'less', 'scss', 'json', 'graphql', 'markdown', 'vue', 'yaml', 'html'] }
+Plug 'prettier/vim-prettier'
+"  \ 'do': 'npm install',
+"  \ 'for': ['javascript', 'typescript', 'css', 'less', 'scss', 'json', 'graphql', 'markdown', 'vue', 'yaml', 'html', 'jsx', 'tsx'] }
 """"""""""""""""""""""""""""""""""""""
 call plug#end()
 filetype plugin on
