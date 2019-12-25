@@ -92,6 +92,10 @@ set nobackup
 
 
 " tabs, 4 spaces
+set noexpandtab
+set copyindent
+set preserveindent
+set softtabstop=0
 set smarttab
 set shiftwidth=4
 set tabstop=4
