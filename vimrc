@@ -91,21 +91,22 @@ syntax enable
 set nobackup
 
 
-" tabs, 4 spaces
-set noexpandtab
-set copyindent
-set preserveindent
-set softtabstop=0
-set smarttab
-set shiftwidth=4
+" tabs
 set tabstop=4
-set list
-set listchars=tab:⇥·,trail:␣
+set softtabstop=0
+set shiftwidth=4
+set expandtab
+"IF TAB NEEDE USE EITHER
+" :set noexpandtab
+" ctrl-V tab
 
 " indent same as previous line
 set autoindent
-" indent based on syntax
 set smartindent
+
+" show tabs and spaces at eol
+set list
+set listchars=tab:⇥·,trail:␣
 
 " So .rs files are detected as rust and not hercules
 au BufRead,BufNewFile *.rs set filetype=rust
