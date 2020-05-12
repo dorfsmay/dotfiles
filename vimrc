@@ -27,7 +27,10 @@ Plug 'tpope/vim-fugitive'
 Plug 'scrooloose/nerdtree'
 Plug 'jamessan/vim-gnupg'
 Plug 'ianks/vim-tsx'
+" Typescript
 Plug 'leafgarland/typescript-vim'
+Plug 'Quramy/tsuquyomi'
+"
 Plug 'maxmellon/vim-jsx-pretty'
 Plug 'vim-syntastic/syntastic'
 "Plug 'rust-lang/rust.vim'
@@ -42,6 +45,7 @@ Plug 'prabirshrestha/asyncomplete-lsp.vim'
 " Black (Python PEP8)
 " Plug 'ambv/black'
 " Prettier (javascript)
+Plug 'dense-analysis/ale'
 Plug 'prettier/vim-prettier'
 "  \ 'do': 'npm install',
 "  \ 'for': ['javascript', 'typescript', 'css', 'less', 'scss', 'json', 'graphql', 'markdown', 'vue', 'yaml', 'html', 'jsx', 'tsx'] }
