@@ -17,6 +17,13 @@ if empty(glob('~/.vim/autoload/plug.vim'))
   autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
 endif
 
+" ALE
+let g:ale_completion_enabled = 1
+let g:ale_linters = {'rust': ['analyzer', 'cargo']}
+let g:ale_fixers = {'rust': ['rustfmt']}
+let g:ale_rust_cargo_use_clippy = 1
+" /ALE
+
 call plug#begin('~/.vim/plugged')
 """"""""""""""""""""""""""""""""""""""
 
@@ -26,39 +33,31 @@ Plug 'andymass/vim-matchup'
 Plug 'tpope/vim-fugitive'
 Plug 'scrooloose/nerdtree'
 Plug 'jamessan/vim-gnupg'
-Plug 'ianks/vim-tsx'
-" Typescript
+" Typescript, tsx
 Plug 'leafgarland/typescript-vim'
-Plug 'Quramy/tsuquyomi'
+Plug 'ianks/vim-tsx'
 "
 Plug 'maxmellon/vim-jsx-pretty'
-Plug 'vim-syntastic/syntastic'
-"Plug 'rust-lang/rust.vim'
-"Plug 'racer-rust/vim-racer'
-" Rust
-Plug 'rust-lang/rust.vim'
-Plug 'prabirshrestha/async.vim'
-Plug 'prabirshrestha/vim-lsp'
-Plug 'prabirshrestha/asyncomplete.vim'
-Plug 'prabirshrestha/asyncomplete-lsp.vim'
-" /Rust
+""Plug 'vim-syntastic/syntastic'
 " Black (Python PEP8)
 " Plug 'ambv/black'
-" Prettier (javascript)
 Plug 'dense-analysis/ale'
+" Prettier (js, ts, json, html, css...)
 Plug 'prettier/vim-prettier'
-"  \ 'do': 'npm install',
-"  \ 'for': ['javascript', 'typescript', 'css', 'less', 'scss', 'json', 'graphql', 'markdown', 'vue', 'yaml', 'html', 'jsx', 'tsx'] }
 """"""""""""""""""""""""""""""""""""""
 call plug#end()
 filetype plugin on
 filetype plugin indent on
-let g:racer_experimental_completer = 1
 
-" run rustfmt on save
-"let g:rustfmt_autosave = 1
-nmap <c-a> :%! rustfmt <enter> <enter>
-smap <c-a> :%! rustfmt <enter> <enter>
+"nmap <c-a> :%! rustfmt <enter> <enter>
+"nmap <silent> <leader>k :ALEPrevious<cr>
+"nmap <silent> <leader>q :ALEFix<cr>
+"nmap <silent> <C-Space> :ALEFix<cr>
+nmap <silent> <C-u> <Plug>(ale_fix)
+nmap <silent> <C-u> <Plug>(ale_fix)
+nmap <silent> <C-i> <Plug>(ale_lint)
+nmap <silent> <C-k> <Plug>(ale_previous_wrap)
+nmap <silent> <C-j> <Plug>(ale_next_wrap)
 
 " folding
 set foldmethod=indent
@@ -114,13 +113,4 @@ set listchars=tab:⇥·,trail:␣
 
 " So .rs files are detected as rust and not hercules
 au BufRead,BufNewFile *.rs set filetype=rust
-
-" For Rust RLS
-if executable('rls')
-    au User lsp_setup call lsp#register_server({
-        \ 'name': 'rls',
-        \ 'cmd': {server_info->['rustup', 'run', 'nightly', 'rls']},
-        \ 'whitelist': ['rust'],
-        \ })
-endif
 
