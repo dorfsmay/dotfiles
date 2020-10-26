@@ -19,9 +19,13 @@ endif
 
 " ALE
 let g:ale_completion_enabled = 1
+let g:ale_cursor_detail = 1
 let g:ale_linters = {'rust': ['analyzer', 'cargo']}
 let g:ale_fixers = {'rust': ['rustfmt']}
 let g:ale_rust_cargo_use_clippy = 1
+" ale_cursor_detail opens a window with more details on error/suggestions
+let g:ale_rust_cargo_check_tests = 1
+let g:ale_rust_cargo_check_examples = 1
 " /ALE
 
 call plug#begin('~/.vim/plugged')
