@@ -54,12 +54,12 @@ filetype plugin on
 filetype plugin indent on
 
 "nmap <c-a> :%! rustfmt <enter> <enter>
-nmap <silent> <C-f> <Plug>(ale_fix)
-nmap <silent> <C-i> <Plug>(ale_lint)
-nmap <silent> <C-k> <Plug>(ale_previous_wrap)
-nmap <silent> <C-j> <Plug>(ale_next_wrap)
-nmap <silent> <C-d> <Plug>(ale_go_to_definition)
-nmap <silent> <C-r> <Plug>(ale_find_references)
+nmap <silent> <Leader>f <Plug>(ale_fix)
+nmap <silent> <Leader>l <Plug>(ale_lint)
+nmap <silent> <Leader>k <Plug>(ale_previous_wrap)
+nmap <silent> <Leader>j <Plug>(ale_next_wrap)
+nmap <silent> <Leader>d <Plug>(ale_go_to_definition)
+nmap <silent> <Leader>r <Plug>(ale_find_references)
 
 " folding
 set foldmethod=indent
