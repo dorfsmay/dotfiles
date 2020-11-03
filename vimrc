@@ -19,11 +19,11 @@ endif
 
 " ALE
 let g:ale_completion_enabled = 1
-let g:ale_cursor_detail = 1
 let g:ale_linters = {'rust': ['analyzer', 'cargo']}
 let g:ale_fixers = {'rust': ['rustfmt']}
 let g:ale_rust_cargo_use_clippy = 1
 " ale_cursor_detail opens a window with more details on error/suggestions
+" let g:ale_cursor_detail = 1
 let g:ale_rust_cargo_check_tests = 1
 let g:ale_rust_cargo_check_examples = 1
 " /ALE
@@ -56,6 +56,7 @@ filetype plugin indent on
 "nmap <c-a> :%! rustfmt <enter> <enter>
 nmap <silent> <Leader>f <Plug>(ale_fix)
 nmap <silent> <Leader>l <Plug>(ale_lint)
+nmap <silent> <Leader>w <Plug>(ale_detail)
 nmap <silent> <Leader>k <Plug>(ale_previous_wrap)
 nmap <silent> <Leader>j <Plug>(ale_next_wrap)
 nmap <silent> <Leader>d <Plug>(ale_go_to_definition)
