@@ -29,6 +29,7 @@ let g:ale_fixers = {
     \'scss': ['prettier'],
     \'markdown': ['prettier'],
 \}
+let g:ale_rust_rustfmt_options = '--edition 2018'
 let g:ale_rust_cargo_use_clippy = 1
 " ale_cursor_detail opens a window with more details on error/suggestions
 " let g:ale_cursor_detail = 1
@@ -43,6 +44,7 @@ call plug#begin('~/.vim/plugged')
 " plugins
 Plug 'andymass/vim-matchup'
 Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-commentary'
 Plug 'scrooloose/nerdtree'
 Plug 'jamessan/vim-gnupg'
 " Typescript, tsx
