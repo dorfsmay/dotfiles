@@ -2,6 +2,9 @@
 " to install all plugins:
 "     vim +PlugInstall +qall
 "
+" to update:
+"     vim +PlugUpdate
+"
 " to clean old plugin, remove from .vimrc +
 "     vim +PlugClean
 "
@@ -24,10 +27,12 @@ let g:ale_fixers = {
     \'rust': ['rustfmt'],
     \'javascript': ['prettier'],
     \'json': ['prettier'],
+    \'json5': ['prettier'],
     \'typescript': ['prettier'],
     \'css': ['prettier'],
     \'scss': ['prettier'],
     \'markdown': ['prettier'],
+    \'html': ['prettier'],
 \}
 let g:ale_rust_rustfmt_options = '--edition 2018'
 let g:ale_rust_cargo_use_clippy = 1
@@ -126,4 +131,5 @@ set listchars=tab:⇥·,trail:␣
 
 " So .rs files are detected as rust and not hercules
 au BufRead,BufNewFile *.rs set filetype=rust
+au BufRead,BufNewFile *.json5 set filetype=json5
 
