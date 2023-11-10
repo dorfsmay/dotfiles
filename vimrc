@@ -28,6 +28,7 @@ let g:ale_fixers = {
     \'javascript': ['prettier'],
     \'json': ['prettier'],
     \'json5': ['prettier'],
+    \'javascriptreact': ['prettier'],
     \'typescript': ['prettier'],
     \'css': ['prettier'],
     \'scss': ['prettier'],
